@@ -1,7 +1,7 @@
 body {
   background-color: gainsboro;
   font-family: "Kumbh Sans", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .container {
@@ -21,11 +21,11 @@ body {
 
 .stack {
   background-color: white;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .innercard {
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 80px 20px;
   background-image: url(./images/bg-pattern-desktop.svg);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -35,6 +35,7 @@ body {
 
 .row {
   display: flex;
+  flex-direction: row;
 }
 
 .column {
@@ -47,18 +48,87 @@ body {
   left: 0;
 }
 
-.illustration-woman {
+.illustration-woman-desktop {
+  display: block;
   position: absolute;
   top: -10px;
   left: -120px;
-  background-image: url(./images/illustration-woman-online-desktop.svg);
+}
+
+.illustration-woman-mobile {
+  display: none;
+  position: absolute;
+  top: -10px;
+  left: -120px;
 }
 
 .illustration-box {
   position: absolute;
-  background-position-y: 120px;
-  background-position-x: -130px;
-  background-image: url(./images/illustration-box-desktop.svg);
+  top: 120px;
+  left: -110px;
+}
+
+@media (max-width: 640px) and (min-width: 320px) {
+  body {
+    background-image: linear-gradient(
+      180deg,
+      hsl(273, 75%, 66%),
+      hsl(240, 73%, 65%)
+    );
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 14px;
+  }
+
+  .card {
+    padding: 5px 7px;
+    width: inherit;
+    margin: 150px 0px 10px 0px;
+    background-image: linear-gradient(
+      180deg,
+      hsl(273, 75%, 66%),
+      hsl(240, 73%, 65%)
+    );
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .container {
+    padding: 0px 0px;
+    align-items: center;
+  }
+
+  .stack {
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  .innercard {
+    padding: 50px 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-image: none;
+  }
+
+  .illustration-woman-desktop {
+    display: none;
+  }
+
+  .illustration-woman-mobile {
+    display: block;
+    position: absolute;
+    top: -180px;
+    left: -15px;
+  }
+
+  .illustration-box {
+    display: none;
+  }
 }
 
 .accordion {
@@ -69,8 +139,7 @@ body {
   text-align: left;
   border: none;
   outline: none;
-	display: block;
-  background-color: white;
+  color: rgb(48, 47, 47);
 }
 
 .accordion:hover {
@@ -94,21 +163,27 @@ body {
   color: hsl(238, 29%, 16%);
 }
 
-.panel {
-  -webkit-transition: max-height 0.2s ease-in-out;
-  -moz-transition: max-height 0.2s ease-in-out;
-  -ms-transition: max-height 0.2s ease-in-out;
-  transition: max-height 0.2s ease-out;
-  background-color: white;
-  color: grey;
-  display: none;
-  overflow: hidden;
-  font-family: "Kumbh Sans";
-}
-
 .section {
   padding: 5px 0px;
-  border-bottom: 1px solid hsl(238, 29%, 16%);
+  margin: 2em 0;
+  overflow: hidden;
+  transition: 0.5s;
+  height: 2em;
+}
+
+.section-item-active {
+  height: 9em;
+}
+
+.panel {
+  font-size: 14px;
+  color: hsl(240, 8%, 70%);
+  margin: 1em 0;
+}
+
+.divider {
+  margin-top: 15px;
+  border: 1px solid hsla(240, 19%, 13%, 0.418);
 }
 
 .attribution {
